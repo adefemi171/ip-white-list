@@ -1,0 +1,4 @@
+{
+    "ArtifactStoreBucket" : { "Fn::GetArtifactAtt" : ["BuildArtifact", "BucketName"]},
+    "ArtifactKey" : { "Fn::GetArtifactAtt" : ["BuildArtifact", "ObjectKey"]}
+  }
