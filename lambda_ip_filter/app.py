@@ -1,10 +1,13 @@
 '''
 IP Filter lambda
 '''
+from lambda_ip_filter.get_ip import getBaseIP
+
+
+url ='https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/blocklist_de.ipset'
 
 #Read IP from IPset
-with open('lambda_ip_filter/test.ipset') as f:
-    client_whitelisted_ip = [line.replace("\n","") for line in f]
+client_whitelisted_ip = getBaseIP(url)
 
 def lambda_handler(event, context):
     try:
